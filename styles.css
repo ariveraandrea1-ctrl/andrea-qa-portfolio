@@ -184,6 +184,27 @@ body.dark .site-header {
   margin-bottom: 1.4rem;
 }
 
+.hero__cv-links {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.cv-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.cv-link:hover,
+.cv-link:focus-visible {
+  color: var(--accent);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
