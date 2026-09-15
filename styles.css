@@ -496,6 +496,67 @@ body.dark .site-header {
   border-radius: var(--radius);
 }
 
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card__image {
+  display: block;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.cert-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.cert-card__image:hover img,
+.cert-card__image:focus-visible img {
+  transform: scale(1.04);
+}
+
+.cert-card__body {
+  padding: 1.3rem 1.5rem 1.5rem;
+}
+
+.cert-card__body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.cert-card__date {
+  margin: 0.2rem 0 0.9rem;
+  color: var(--accent-strong);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.cert-card__link {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.92rem;
+}
+
+.cert-card__link:hover,
+.cert-card__link:focus-visible {
+  color: var(--accent);
+}
+
 .contact-card,
 .info-card {
   min-height: 100%;
