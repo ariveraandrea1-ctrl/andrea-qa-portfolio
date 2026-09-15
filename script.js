@@ -93,8 +93,29 @@ if (form) {
       return;
     }
 
-    statusMessage.textContent = 'Mensaje listo para enviarse con Formspree. Reemplaza el ID de prueba por el tuyo para activar el envío real.';
-    statusMessage.className = 'form-status success';
-    form.reset();
+    statusMessage.textContent = 'Enviando tu mensaje...';
+    statusMessage.className = 'form-status';
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+    })
+      .then((response) => {
+        if (response.ok) {
+          statusMessage.textContent = '¡Gracias! Tu mensaje fue enviado correctamente, te responderé pronto.';
+          statusMessage.className = 'form-status success';
+          form.reset();
+        } else {
+          statusMessage.textContent = 'Hubo un problema al enviar tu mensaje. Intenta de nuevo o escríbeme directamente por correo.';
+          statusMessage.className = 'form-status error';
+        }
+      })
+      .catch(() => {
+        statusMessage.textContent = 'Hubo un problema de conexión al enviar tu mensaje. Intenta de nuevo.';
+        statusMessage.className = 'form-status error';
+      });
   });
 }
