@@ -1,62 +1,27 @@
-# Portafolio profesional de Andrea Rivera Amador
+# Portafolio de Andrea Rivera Amador
 
-Este proyecto es un portafolio personal de una sola página para presentar a Andrea Rivera Amador como Junior QA Engineer. Está diseñado para ser simple, rápido y fácil de publicar en GitHub Pages.
+Puedes ver la página aquí: **https://ariveraandrea1-ctrl.github.io/andrea-qa-portfolio/**
 
-## Stack elegido
+Esta es mi página de presentación como Junior QA Engineer. Ahí cuento quién soy, mi experiencia, las herramientas que manejo, los proyectos de QA que he hecho y mis certificaciones. También se pueden descargar mi hoja de vida en español y en inglés, y escribirme directamente desde el formulario de contacto.
 
-Se eligió HTML, CSS y JavaScript puro porque es la opción más ligera, mantenible y compatible con GitHub Pages. El sitio es rápido, no depende de dependencias pesadas ni de compilación, y facilita la publicación gratuita en hosting estático.
+## Cómo la hice
 
-## Estructura del proyecto
+La construí como ejercicio práctico del curso de Desarrollo con IA que estoy haciendo. Preferí usar HTML, CSS y JavaScript sin frameworks porque para una página de una sola sección no hacía falta más, carga rápido y se publica gratis en GitHub Pages sin ningún paso de compilación.
 
-```text
-andrea-qa-portfolio/
-├── index.html
-├── styles.css
-├── script.js
-├── assets/
-│   └── foto-perfil.jpg
-├── README.md
-└── .gitignore
+Algunos detalles:
+
+- La sección de proyectos trae mis repositorios públicos usando la API de GitHub. Si la API no responde, la página muestra un aviso en lugar de romperse.
+- El formulario de contacto envía los mensajes a través de Formspree.
+- Tiene modo oscuro, que se activa con el botón de la esquina superior derecha.
+
+## Estructura
+
 ```
-
-## Cómo personalizar la foto de perfil
-
-1. Reemplaza el archivo `assets/foto-perfil.jpg` por tu foto real.
-2. Asegúrate de que la imagen tenga proporciones adecuadas (idealmente cuadrada o casi cuadrada).
-3. Si quieres mantener el mismo estilo visual, usa una foto con fondo limpio y buen encuadre.
-
-## Cómo configurar el formulario de contacto con Formspree
-
-1. Crea una cuenta gratuita en https://formspree.io
-2. Crea un nuevo formulario
-3. Obtén el ID del formulario
-4. En el archivo `index.html`, reemplaza el valor actual en el atributo `action`:
-
-```html
-<form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+index.html      contenido de la página
+styles.css      estilos, incluido el modo oscuro
+script.js       proyectos desde GitHub, formulario y cambio de tema
+assets/         foto, hojas de vida en PDF e imágenes de certificados
 ```
-
-por:
-
-```html
-<form action="https://formspree.io/f/tu-id-real" method="POST">
-```
-
-El proyecto ya incluye validación básica del formulario y un mensaje de confirmación visible en la interfaz.
-
-## Publicación en GitHub Pages
-
-1. Sube este proyecto a un repositorio de GitHub.
-2. En el repositorio, entra a **Settings** > **Pages**.
-3. Selecciona la rama principal (`main` o `master`) y la carpeta raíz (`/root`).
-4. Guarda la configuración.
-5. GitHub Pages te dará una URL pública del sitio.
-
-## Notas adicionales
-
-- La sección de proyectos reutiliza la API pública de GitHub para listar repositorios públicos.
-- Si la API falla, el sitio muestra un mensaje elegante sin romper el diseño.
-- El tema oscuro se activa con un botón en la esquina superior derecha.
 
 ## Contacto
 
