@@ -395,6 +395,20 @@ body.dark .site-header {
   padding: 2rem;
 }
 
+.project-feature + .project-feature {
+  margin-top: 1.5rem;
+}
+
+.card .btn--primary {
+  color: #fff;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 .project-kicker {
   margin: 0 0 0.5rem;
   text-transform: uppercase;
