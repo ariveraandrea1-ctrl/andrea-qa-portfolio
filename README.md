@@ -10,7 +10,7 @@ La construí como ejercicio práctico del curso de Desarrollo con IA que estoy h
 
 Algunos detalles:
 
-- La sección de proyectos trae mis repositorios públicos usando la API de GitHub. Si la API no responde, la página muestra un aviso en lugar de romperse.
+- La sección de proyectos muestra los repositorios que yo elijo, cada uno con su descripción, en lugar de listarlos automáticamente.
 - El formulario de contacto envía los mensajes a través de Formspree.
 - Tiene modo oscuro, que se activa con el botón de la esquina superior derecha.
 
@@ -19,7 +19,7 @@ Algunos detalles:
 ```
 index.html      contenido de la página
 styles.css      estilos, incluido el modo oscuro
-script.js       proyectos desde GitHub, formulario y cambio de tema
+script.js       formulario de contacto y cambio de tema
 assets/         foto, hojas de vida en PDF e imágenes de certificados
 ```
 

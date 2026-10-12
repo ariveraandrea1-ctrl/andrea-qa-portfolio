@@ -17,54 +17,6 @@ themeToggle.addEventListener('click', () => {
   themeText.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
 });
 
-const reposContainer = document.getElementById('github-repos');
-
-async function loadRepos() {
-  if (!reposContainer) return;
-
-  try {
-    const response = await fetch('https://api.github.com/users/ariveraandrea1-ctrl/repos');
-    if (!response.ok) throw new Error('No se pudo cargar la información de GitHub');
-
-    const repos = await response.json();
-    const publicRepos = repos
-      .filter((repo) => !repo.private)
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-
-    if (!publicRepos.length) {
-      reposContainer.innerHTML = '<div class="repo-empty">No hay repositorios públicos disponibles en este momento.</div>';
-      return;
-    }
-
-    reposContainer.innerHTML = publicRepos
-      .slice(0, 6)
-      .map(
-        (repo) => `
-          <article class="repo-card">
-            <div class="repo-card__top">
-              <h4>${repo.name}</h4>
-              <a href="${repo.html_url}" target="_blank" rel="noreferrer" aria-label="Abrir ${repo.name} en GitHub">↗</a>
-            </div>
-            <p>${repo.description || 'Sin descripción disponible.'}</p>
-            <div class="repo-card__meta">
-              <span><span class="repo-dot"></span> ${repo.language || 'Otros'}</span>
-              <span>${repo.stargazers_count} ★</span>
-            </div>
-          </article>
-        `
-      )
-      .join('');
-  } catch (error) {
-    reposContainer.innerHTML = `
-      <div class="repo-empty">
-        No se pudieron cargar los repositorios públicos en este momento. Puedes visitar mi perfil en GitHub directamente.
-      </div>
-    `;
-  }
-}
-
-loadRepos();
-
 const form = document.getElementById('contact-form');
 const statusMessage = document.getElementById('form-status');
 
